@@ -1,0 +1,12 @@
+{
+  "name": "Python 3",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "mounts": [
+    "source=${localEnv:USERPROFILE}\\.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+  ],
+  "postCreateCommand": "ssh -T git@github.com || true",
+  "remoteUser": "vscode"
+}
